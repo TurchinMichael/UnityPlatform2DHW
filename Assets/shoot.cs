@@ -9,6 +9,7 @@ public class shoot : MonoBehaviour
     public float Speed, LifeTime;
     Vector3 Dir = new Vector3(0, 0, 0);
     AudioSource m_MyAudioSource;
+    Rigidbody2D rb2d;
 
     void Start()
     {
@@ -23,35 +24,23 @@ public class shoot : MonoBehaviour
             Vector3 theScale;
             theScale = transform.localScale;
             theScale.x *= -1;
-            Debug.Log("ASDasd");
             this.transform.localScale = theScale;
         }
 
         Destroy(gameObject, LifeTime);
+        rb2d = GetComponent<Rigidbody2D>();
     }
     void FixedUpdate()
     {
-        //if (GameObject.FindGameObjectWithTag("Player").transform.localScale.x < 0)
-        //{
-        //    Debug.Log("-= Dir");
-        //    transform.position -= Dir;
-        //}
-        //if (GameObject.FindGameObjectWithTag("Player").transform.localScale.x > 0)
-        //{
-        //    Debug.Log("+= Dir");
-            transform.position += Dir;
-        //}
-
             //transform.position += Dir;
-        // Движение снаряда
+
+        rb2d.AddForce(Vector2.right * Dir, ForceMode2D.Impulse);
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("ENEMY");
         // Если объект с которым мы столкнулись имеет тег Enemy
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("ENEMY");
             MyEnemy Enemy = collision.gameObject.GetComponent<MyEnemy>();
             // Делаем ссылку на объект противника
             if (Enemy != null) // Если ссылка не пуста
@@ -59,9 +48,8 @@ public class shoot : MonoBehaviour
                 Enemy.Hurt(Damage); // Вызываем метод урона и указываем его размер
                 // Спауним объект, который симулирует взрыв
                 Instantiate(BOOM, transform.position, transform.rotation);
-
-
                 m_MyAudioSource.Play();
+
                 // Уничтожаем пулю
                 Destroy(gameObject);
             }

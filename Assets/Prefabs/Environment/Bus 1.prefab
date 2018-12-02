@@ -77,11 +77,11 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &21200000
 SpriteRenderer:
@@ -318,6 +318,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BOOM: {fileID: 100000, guid: 42404bf7d14c342f69690c9961a7530d, type: 2}
-  Damage: 10
+  Damage: 5
   Speed: 1
-  LifeTime: 3
+  LifeTime: 1
