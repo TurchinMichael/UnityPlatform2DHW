@@ -5120,8 +5120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d0bbbd1db36ef4d8ca62895d5a2568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 25
-  acceleration: 60
+  maxSpeed: 7
+  acceleration: 7
   bullet: {fileID: 100002, guid: c55374ac16215604db3e8dc00598b4f1, type: 2}
   startBullet: {fileID: 1238686398}
   bombPacket: {fileID: 1923504508944588, guid: be34ee0e6cb60894ca85899a4ea99cbc, type: 2}
