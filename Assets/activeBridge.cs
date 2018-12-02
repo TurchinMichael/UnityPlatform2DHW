@@ -6,6 +6,7 @@ public class activeBridge : MonoBehaviour
 {
     public Rigidbody2D rb;
     public HingeJoint2D hj;
+    public List<mySpawn> mySpawns;
     
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -15,7 +16,9 @@ public class activeBridge : MonoBehaviour
             hj.useMotor= true;
             StartCoroutine("disable");
 
-            print(other.gameObject.tag);
+            foreach(mySpawn obj in mySpawns)
+                obj.Spawn();
+            //print(other.gameObject.tag);
         }
     }
 

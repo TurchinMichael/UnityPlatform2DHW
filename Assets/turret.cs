@@ -7,15 +7,17 @@ public class turret : MonoBehaviour {
     public Transform target;
     public Transform idleTarget;
     public float speed, distanceAttack;
+
+    public float shootTimer = 20;
+    float tempTimer;
+    bool canShoot;
+
     public List<boxTurrelDisable> boxesDisable;
     Vector3 vectorToTarget;
     Quaternion q;
     RaycastHit2D hit;
     string[] layers = new string[] { "Player", "Ground" };
     
-    public float shootTimer = 20;
-    float tempTimer;
-    bool canShoot;
     
     // Update is called once per frame
     void Update () {
@@ -34,8 +36,7 @@ public class turret : MonoBehaviour {
 
             if (target != null)
                 hit = Physics2D.Raycast(transform.position, target.position - transform.position, distanceAttack, LayerMask.GetMask(layers));
-
-
+            
             tempTimer -= Time.deltaTime;
             if (tempTimer <= 0)
             {
@@ -73,11 +74,7 @@ public class turret : MonoBehaviour {
     public GameObject packetTurret;
     public Transform startForPacketTurret;
 
-    /// <summary>
     /// стрельба из туррели
-    /// </summary>
-    /// <summary>
-    /// Метод стреляющий снарядом
     /// </summary>
     /// <param name = "packet" > объект снаряда</param>
     /// <param name = "startForPacket" > позиция создания снаряда</param>
