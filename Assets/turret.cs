@@ -19,7 +19,6 @@ public class turret : MonoBehaviour {
     string[] layers = new string[] { "Player", "Ground" };
     
     
-    // Update is called once per frame
     void Update () {
         for (int i  = 0; i < boxesDisable.Count; i++)
         {

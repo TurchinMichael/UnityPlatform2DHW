@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.55, y: 0.3, z: 0.55}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_Children:
   - {fileID: 400000}
   m_Father: {fileID: 0}
@@ -222,7 +222,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8b4e61c51941a46d1aac273472c814fd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.311
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -319,5 +319,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BOOM: {fileID: 100000, guid: 42404bf7d14c342f69690c9961a7530d, type: 2}
   Damage: 5
-  Speed: 1
+  Speed: 40
   LifeTime: 1

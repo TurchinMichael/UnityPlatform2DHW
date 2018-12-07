@@ -10,7 +10,7 @@ public class boxTurrelDisable : MonoBehaviour {
         get { return isStay; }
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "box")
         {

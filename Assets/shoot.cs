@@ -13,28 +13,28 @@ public class shoot : MonoBehaviour
 
     void Start()
     {
-        m_MyAudioSource = GetComponent<AudioSource>();
+        //m_MyAudioSource = GetComponent<AudioSource>();
 
-        if (GameObject.FindGameObjectWithTag("Player").transform.localScale.x > 0)
-        Dir.x = Speed;
+        //if (GameObject.FindGameObjectWithTag("Player").transform.localRotation.y > 90)
+        //Dir.x = Speed;
 
-        if (GameObject.FindGameObjectWithTag("Player").transform.localScale.x < 0)
-        {
-            Dir.x = -Speed;
-            Vector3 theScale;
-            theScale = transform.localScale;
-            theScale.x *= -1;
-            this.transform.localScale = theScale;
-        }
+        //if (GameObject.FindGameObjectWithTag("Player").transform.localRotation.y < 90)
+        //{
+        //    Dir.x = -Speed;
+        //    Vector3 theScale;
+        //    theScale = transform.localScale;
+        //    theScale.x *= -1;
+        //    this.transform.localScale = theScale;
+        //}
 
         Destroy(gameObject, LifeTime);
         rb2d = GetComponent<Rigidbody2D>();
     }
     void FixedUpdate()
     {
-            //transform.position += Dir;
-
-        rb2d.AddForce(Vector2.right * Dir, ForceMode2D.Impulse);
+        //transform.position += Dir;
+        print(new Vector2(transform.forward.z, transform.forward.y) * Speed);
+        rb2d.AddForce(new Vector2(transform.forward.z, transform.forward.y) * Speed);
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -48,7 +48,7 @@ public class shoot : MonoBehaviour
                 Enemy.Hurt(Damage); // Вызываем метод урона и указываем его размер
                 // Спауним объект, который симулирует взрыв
                 Instantiate(BOOM, transform.position, transform.rotation);
-                m_MyAudioSource.Play();
+                //m_MyAudioSource.Play();
 
                 // Уничтожаем пулю
                 Destroy(gameObject);

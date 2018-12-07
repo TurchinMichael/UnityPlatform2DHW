@@ -27,8 +27,11 @@ public class shootPlayer : MonoBehaviour {
         // Если объект с которым мы столкнулись имеет тег Enemy
         if (collision.gameObject.tag == "Player")
         {
-            print("popal");
+            //print("popal");
             collision.gameObject.GetComponent<myPlayerHealth>().getDamage(damage);
+            Destroy(gameObject);
         }
+        Instantiate(BOOM, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }

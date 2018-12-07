@@ -11,9 +11,14 @@ public class playerController : MonoBehaviour
 
     private bool facingRight = true;
     private Vector3 theScale;
+    Vector3 mousePos;
+    Vector3 myPos;
 
     public GameObject bullet; // Наш снаряд
     public GameObject startBullet; // точка, где он создается
+    bool canShoot;
+    public float shootTimer = 20;
+    float tempTimer;
 
     public GameObject bombPacket; // бомба
     public GameObject startBomb; // точка, где она создается
@@ -22,6 +27,12 @@ public class playerController : MonoBehaviour
     public LayerMask groundLayer;
 
     private Animator anim;
+    bool isFoward;
+
+    public bool IsFoward
+    {
+        get { return isFoward; }
+    }
 
     void Start()
     {
@@ -32,31 +43,42 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        tempTimer -= Time.deltaTime;
+        if (tempTimer <= 0)
+        {
+            canShoot = true;
+        }
+
         // изменяем направление движения для персонажа с помощью клавиатуры
         dir.x = Input.GetAxis("Horizontal") * acceleration;
 
 
-        // костыльный разворот спрайта персонажа вправо
-        if (dir.x > 0 && !facingRight)
-        {
-            facingRight = !facingRight;
 
-            theScale = this.transform.localScale;
-            theScale.x *= -1;
-            this.transform.localScale = theScale;
+        mousePos = Input.mousePosition;
+        myPos = Camera.main.WorldToScreenPoint(transform.position);
+
+        mousePos = mousePos - myPos;
+
+        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+
+        //print(Mathf.Abs(angle));
+        if (Mathf.Abs(angle) > 90)
+        {
+            angle = 180;
+            isFoward = false;
+            //print(isFoward);
+        }
+        else
+        {
+            angle = 0;
+            isFoward = true;
+            //print(isFoward);
         }
 
-        // костыльный разворот спрайта персонажа влево
-        if (dir.x < 0 && facingRight)
-        {
-            facingRight = !facingRight;
-
-            theScale = transform.localScale;
-            theScale.x *= -1;
-            this.transform.localScale = theScale;
-        }
+        transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
 
 
+        
         if (dir.x != 0)
         {
             float z = Mathf.Clamp(dir.x, -maxSpeed, maxSpeed);
@@ -105,7 +127,12 @@ public class playerController : MonoBehaviour
     /// <param name = "startForPacket" > позиция создания снаряда</param>
     void fire(GameObject packet, Vector3 startForPacket)
     {
-        Instantiate(packet, startForPacket, transform.rotation);
+        if (canShoot)
+        {
+            Instantiate(packet, startForPacket, transform.rotation);
+            tempTimer = shootTimer;
+            canShoot = false;
+        }
     }
 
     /// <summary>
@@ -142,6 +169,4 @@ public class playerController : MonoBehaviour
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
-
-
 }

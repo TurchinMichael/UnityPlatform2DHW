@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50281b875115c6c4da2229fb4fa29688, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BOOM: {fileID: 0}
+  BOOM: {fileID: 100000, guid: 42404bf7d14c342f69690c9961a7530d, type: 2}
   damage: 1
   Speed: 4
   LifeTime: 2
