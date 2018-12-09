@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 61943467885357920}
   - component: {fileID: 50321895897770614}
   - component: {fileID: 114537356621855006}
-  m_Layer: 0
-  m_Name: part_rocket 1
+  m_Layer: 15
+  m_Name: enemy_rocket 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BOOM: {fileID: 100000, guid: 42404bf7d14c342f69690c9961a7530d, type: 2}
   damage: 1
-  Speed: 4
+  Speed: 3
   LifeTime: 2
 --- !u!212 &212271761198107738
 SpriteRenderer:

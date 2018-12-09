@@ -29,14 +29,17 @@ public class rangeAttack : baseFight
 
             if (tempTimer <= 0)
                 canHit = true;
-            
+
+            Vector3 vectorToTarget = Target.position - transform.position;
+
+            float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg;
             if (Vector2.Distance(transform.position, Target.position) < DistanceAttack && Vector2.Distance(transform.position, Target.position) > blindZoneAttack && vision.isSee())
             {
                 if (canHit)
                 {
                     canHit = false;
                     tempTimer = ShootTimer;
-                    Instantiate(HitSprite, StartForHit.position, transform.rotation);
+                    Instantiate(HitSprite, StartForHit.position, Quaternion.AngleAxis(Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg, Vector3.forward));
                 }
             }
         }

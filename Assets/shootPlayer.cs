@@ -24,13 +24,17 @@ public class shootPlayer : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Если объект с которым мы столкнулись имеет тег Enemy
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Enemy")
         {
             //print("popal");
-            collision.gameObject.GetComponent<myPlayerHealth>().getDamage(damage);
+            if(collision.gameObject.GetComponent<myPlayerHealth>())
+                collision.gameObject.GetComponent<myPlayerHealth>().getDamage(damage);
+            if (collision.gameObject.GetComponent<MyEnemy>())
+                collision.gameObject.GetComponent<MyEnemy>().Hurt(damage);
+
             Destroy(gameObject);
         }
+        
         Instantiate(BOOM, transform.position, transform.rotation);
         Destroy(gameObject);
     }

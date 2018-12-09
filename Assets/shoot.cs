@@ -33,7 +33,7 @@ public class shoot : MonoBehaviour
     void FixedUpdate()
     {
         //transform.position += Dir;
-        print(new Vector2(transform.forward.z, transform.forward.y) * Speed);
+        //print(new Vector2(transform.forward.z, transform.forward.y) * Speed);
         rb2d.AddForce(new Vector2(transform.forward.z, transform.forward.y) * Speed);
     }
     void OnCollisionEnter2D(Collision2D collision)

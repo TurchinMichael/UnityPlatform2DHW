@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
+    Vector3 dir = Vector3.zero;
+
     public float maxSpeed;
     public float acceleration; // Скорость движения, а в дальнейшем ускорение
-    private Vector2 dir = new Vector3(0, 0);// Направление движения
     private Rigidbody2D rb2d;
 
     private bool facingRight = true;
-    private Vector3 theScale;
+    //private Vector3 theScale;
     Vector3 mousePos;
     Vector3 myPos;
 
-    public GameObject bullet; // Наш снаряд
-    public GameObject startBullet; // точка, где он создается
+   // public GameObject bullet; // Наш снаряд
+   // public GameObject startBullet; // точка, где он создается
     bool canShoot;
     public float shootTimer = 20;
     float tempTimer;
@@ -23,11 +24,11 @@ public class playerController : MonoBehaviour
     public GameObject bombPacket; // бомба
     public GameObject startBomb; // точка, где она создается
 
-    public float jumpForce;
-    public LayerMask groundLayer;
+    //public float jumpForce;
+    //public LayerMask groundLayer;
 
     private Animator anim;
-    bool isFoward;
+    bool isFoward = true;
 
     public bool IsFoward
     {
@@ -36,23 +37,18 @@ public class playerController : MonoBehaviour
 
     void Start()
     {
-        //anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        tempTimer -= Time.deltaTime;
-        if (tempTimer <= 0)
-        {
-            canShoot = true;
-        }
+        //tempTimer -= Time.deltaTime;
+        //if (tempTimer <= 0)
+           // canShoot = true;
 
         // изменяем направление движения для персонажа с помощью клавиатуры
         dir.x = Input.GetAxis("Horizontal") * acceleration;
-
-
 
         mousePos = Input.mousePosition;
         myPos = Camera.main.WorldToScreenPoint(transform.position);
@@ -61,24 +57,19 @@ public class playerController : MonoBehaviour
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
 
-        //print(Mathf.Abs(angle));
         if (Mathf.Abs(angle) > 90)
         {
             angle = 180;
             isFoward = false;
-            //print(isFoward);
         }
         else
         {
             angle = 0;
             isFoward = true;
-            //print(isFoward);
         }
 
         transform.rotation = Quaternion.Euler(new Vector3(0, angle, 0));
 
-
-        
         if (dir.x != 0)
         {
             float z = Mathf.Clamp(dir.x, -maxSpeed, maxSpeed);
@@ -97,27 +88,14 @@ public class playerController : MonoBehaviour
                 print("sdfsdfs");
             }
         }
-
-
-
-        // стрельба
-        if (Input.GetButtonDown("Fire1"))
-        {
-            fire(bullet, startBullet.transform.position);
-        }
-
-        // прыжок
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
-
-
+        
+        //// прыжок
+        //if (Input.GetKeyDown(KeyCode.Space))
+        //    Jump();
+        
         // заложить взрывчатку
         if (Input.GetKeyDown(KeyCode.Z))
-        {
             fire(bombPacket, startBomb.transform.position);
-        }
     }
 
     /// <summary>
@@ -135,38 +113,31 @@ public class playerController : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Метод отслеживающий стоит ли персонаж на поверхности, от которой можно оттолкнуться
-    /// </summary>
-    /// <returns></returns>
-    bool IsGrounded()
-    {
-        Vector2 position = transform.position;
-        Vector2 direction = Vector2.down;
-        float distance = 1.0f;
+    ///// <summary>
+    ///// Метод отслеживающий стоит ли персонаж на поверхности, от которой можно оттолкнуться
+    ///// </summary>
+    ///// <returns></returns>
+    //bool IsGrounded()
+    //{
+    //    Vector2 position = transform.position;
+    //    Vector2 direction = Vector2.down;
+    //    float distance = 1.0f;
 
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
-        if (hit.collider != null)
-        {
-            return true;
-        }
+    //    RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+    //    if (hit.collider != null)
+    //        return true;
 
-        return false;
-    }
+    //    return false;
+    //}
 
-    /// <summary>
-    /// Метод прыжка
-    /// </summary>
-    void Jump()
-    {
-        if (!IsGrounded())
-        {
-            return;
-        }
-        else
-        {
-            //anim?.SetTrigger("Jump");
-            rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-    }
+    ///// <summary>
+    ///// Метод прыжка
+    ///// </summary>
+    //void Jump()
+    //{
+    //    if (!IsGrounded())
+    //        return;
+    //    else
+    //        rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    //}
 }

@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class MyEnemy : MonoBehaviour
 {
-    private int heath = 4;
+    private int heath = 2;
     public int damage = 1;
     Transform target;
 
     public float moveSpeed = 2f;
     public float maxSpeed = 100f;
     Vision vision;
+
+    //public GameObject hitSprite;
+    //public Transform startForHit;
 
 
     //public float deathSpinMin = -100f; 
@@ -25,7 +28,7 @@ public class MyEnemy : MonoBehaviour
     {
         heath -= Damage;
         //Debug.Log("Ouch: " + heath);
-        if (heath <= 0)
+        if (heath < 1)
         {
            // Debug.Log("dead: ");
             Destroy(gameObject);
@@ -94,6 +97,4 @@ public class MyEnemy : MonoBehaviour
         transform.localScale = enemyScale;
     }
     
-    public GameObject hitSprite;
-    public Transform startForHit;
 }
