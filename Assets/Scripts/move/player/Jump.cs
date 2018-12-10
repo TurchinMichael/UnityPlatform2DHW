@@ -16,7 +16,7 @@ public class Jump : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update() {
 
         // прыжок
         if (Input.GetKeyDown(KeyCode.Space))

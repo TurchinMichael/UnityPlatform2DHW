@@ -41,7 +41,7 @@ public class tutorial : MonoBehaviour
         hero = GameObject.FindWithTag("Player");
         myHealth.infOn();
         IsEnableAllCopoments(false);
-        StartCoroutine(TextPrint(task, "Привет, это твой герой, его только создали и вручили базуку с бомбами, он не помнит как двигаться. \nНапомни ему.", 0.1f, oneVoid/*, skipText*/));
+        StartCoroutine(TextPrint(task, "Привет, это твой герой, его только создали и вручили базуку с бомбами, он не помнит как двигаться. \nНапомни ему.", 0.04f, oneVoid/*, skipText*/));
     }
 
     IEnumerator TextPrint(Text output, string input, float delay, Action action/*, ref bool skip*/)
@@ -116,9 +116,9 @@ public class tutorial : MonoBehaviour
             //print(collision.name);
             isPrint = false;
             //two = false;
-            StartCoroutine(TextPrint(task, "Отлично сработано, возможно ты мне пригодишься, посмотрим, справишься ли ты с моей задачей.", 0.1f, finalVoid/*, skipText*/));
+            StartCoroutine(TextPrint(task, "Отлично сработано, возможно ты мне пригодишься, посмотрим, справишься ли ты с моей задачей.", 0.04f, finalVoid/*, skipText*/));
             //square.enabled = false;
-            print("2");
+            //print("2");
         }
     }
     void Update()
@@ -131,7 +131,7 @@ public class tutorial : MonoBehaviour
             {
                 isPrint = false;
                 one = false;
-                StartCoroutine(TextPrint(task, "Отлично! Теперь заставь его запрыгнуть вот на эту платформу.", 0.1f, twoVoid/*, skipText*/));
+                StartCoroutine(TextPrint(task, "Отлично! Теперь заставь его запрыгнуть вот на эту платформу.", 0.04f, twoVoid/*, skipText*/));
             }
         }
     }
@@ -143,7 +143,7 @@ public class tutorial : MonoBehaviour
             //print(collision.name);
             isPrint = false;
             three = false;
-            StartCoroutine(TextPrint(task, "Ну чтож, молодец. Теперь посмотрим, на что ты способен.", 0.1f, fourVoid/*, skipText*/));
+            StartCoroutine(TextPrint(task, "Ну чтож, молодец. Теперь посмотрим, на что ты способен.", 0.04f, fourVoid/*, skipText*/));
             //spawn.enemy.AddComponent<loadNewScene>();
             //loadNewScene z = spawn.enemy.GetComponent<loadNewScene>();
             //Destroy(z, 0.1f);
@@ -159,7 +159,7 @@ public class tutorial : MonoBehaviour
             //print(collision.name);
             isPrint = false;
                 two = false;
-                StartCoroutine(TextPrint(task, "Супер! Ты исполнительный. Пройди правее, и ты встретишь преграду. Тебе надо пройти через неё. \nВзорви её!", 0.1f, threeVoid/*, skipText*/));
+                StartCoroutine(TextPrint(task, "Супер! Ты исполнительный. Пройди правее, и ты встретишь преграду. Тебе надо пройти через неё. \nВзорви её!", 0.04f, threeVoid/*, skipText*/));
             square.enabled = false;
         }
     }

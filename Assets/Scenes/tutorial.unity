@@ -504,12 +504,12 @@ Prefab:
     - target: {fileID: 224109649076565072, guid: 3e2ae7d1d0c55b440adb94bb6216edc9,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224731638210973252, guid: 3e2ae7d1d0c55b440adb94bb6216edc9,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114758250437005990, guid: 3e2ae7d1d0c55b440adb94bb6216edc9,
         type: 2}

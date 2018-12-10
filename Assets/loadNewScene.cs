@@ -8,13 +8,13 @@ public class loadNewScene : MonoBehaviour {
     
     public void loadScene()
     {
-        print("2");
+       // print("2");
         GameObject.FindWithTag("TutorialHUD").GetComponent<tutorial>().finalOk();
     }
 
     private void OnDestroy()
     {
-        print("1");
+        //print("1");
         loadScene();
     }
 }
