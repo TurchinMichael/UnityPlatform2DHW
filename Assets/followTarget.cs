@@ -16,5 +16,6 @@ public class followTarget : MonoBehaviour {
 	void Update () {
         if (target)
             transform.position = target.position + difference;
-	}
+    }
+
 }
