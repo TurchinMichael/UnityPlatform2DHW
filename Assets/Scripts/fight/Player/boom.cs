@@ -34,6 +34,10 @@ public class boom : MonoBehaviour {
 
                 hit.attachedRigidbody.AddForce(direction.normalized * power);
 
+                if (hit.tag == "Wall")
+                    hit.attachedRigidbody.AddForce(direction.normalized * power*10);
+
+
                 if (hit.GetComponent<MyEnemy>())
                     hit.GetComponent<MyEnemy>().Hurt(damage);
 

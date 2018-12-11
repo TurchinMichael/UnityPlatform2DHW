@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionRadius: 8
-  power: 5000
+  power: 400
   damage: 1
   timeBeforeTheExplosion: 1
 --- !u!212 &212412225123099096

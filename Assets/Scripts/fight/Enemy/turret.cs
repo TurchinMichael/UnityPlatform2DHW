@@ -17,8 +17,12 @@ public class turret : MonoBehaviour {
     Quaternion q;
     RaycastHit2D hit;
     string[] layers = new string[] { "Player", "Ground" };
-    
-    
+
+    private void Awake()
+    {
+        target = GameObject.FindWithTag("Player").transform;
+    }
+
     void Update () {
         for (int i  = 0; i < boxesDisable.Count; i++)
         {

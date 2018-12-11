@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-X:/GIT/2d/Build/tutorial platf.exe
+D:/Git/UnityPlatform2DHW/Build/tutorial platf.exe
 SceneListBegin?
 Assets/Scenes/tutorial.unity
 Assets/Scenes/Level1.unity
@@ -190,6 +190,7 @@ ef1631c73e265150d983aac5a92098c7 Assembly-CSharp.dll:.PlayerControl
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 69e4c61b8b1d90f4bcecf87495366021 Assembly-CSharp.dll:.HealthPickup
 fad04644bea8cde5d4fcc9b2d0815b4c Assembly-CSharp.dll:.Spawner
+fe6e26b579b3930713b8fbcdb8c77dde Assembly-CSharp.dll:.task
 d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 486cd95c82d8305219c352c06b776e1f UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -210,5 +211,3 @@ d25077a364a89703e9ce71e7ddba390c Assembly-CSharp.dll:.Jump
 7a3e9068c3234e201603a302832b5427 Assembly-CSharp.dll:.ScoreShadow
 1e2416ba23504b0ece46b5ba779e11ef Assembly-CSharp.dll:.Bomb
 67053dd85e9c9aa7b2eac0e5b916f295 Assembly-CSharp.dll:.CameraFollow
-ddcae71b3f91386237efd012a9eef2be UnityEngine.TestRunner.dll:UnityEngine.TestTools.EnumerableSetUpTearDownCommandState
-486cd95c82d8305219c352c06b776e1f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.TestResultRendererCallback
