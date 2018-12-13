@@ -7,12 +7,14 @@ public class Jump : MonoBehaviour {
     private Rigidbody2D rb2d;
     public float jumpForce;
     public LayerMask groundLayer;
+    Animator animator;
 
     // Use this for initialization
     void Start ()
     {
         rb2d = GetComponent<Rigidbody2D>();
-
+        if (GetComponent<Animator>())
+            animator = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -31,14 +33,17 @@ public class Jump : MonoBehaviour {
         if (!IsGrounded())
             return;
         else
+        {
             rb2d.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            animator.SetTrigger("jump");
+        }
     }
 
     /// <summary>
     /// Метод отслеживающий стоит ли персонаж на поверхности, от которой можно оттолкнуться
     /// </summary>
     /// <returns></returns>
-    bool IsGrounded()
+    public bool IsGrounded()
     {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;

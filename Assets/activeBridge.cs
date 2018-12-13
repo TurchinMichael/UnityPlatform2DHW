@@ -16,7 +16,7 @@ public class activeBridge : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        print(other.gameObject.tag);
+        //print(other.gameObject.tag);
         if (other.tag == "Player" && !hj.useMotor/*isFallenBridge.IsFall*/)
         {
             hj.useMotor= true;

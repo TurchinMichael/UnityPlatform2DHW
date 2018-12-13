@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float maxSpeed;
     public float acceleration; // Скорость движения, а в дальнейшем ускорение
     private Rigidbody2D rb2d;
+    Jump jump;
 
     private bool facingRight = true;
     //private Vector3 theScale;
@@ -21,8 +22,10 @@ public class PlayerController : MonoBehaviour
     //public float jumpForce;
     //public LayerMask groundLayer;
 
-    private Animator anim;
     bool isFoward = true;
+    Animator animator;
+
+    // Use this for initialization
 
     public bool IsFoward
     {
@@ -32,6 +35,12 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        if (GetComponent<Jump>())
+            jump = GetComponent<Jump>();
+        if (GetComponent<Animator>())
+            
+        if (GetComponent<Animator>())
+            animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -64,8 +73,13 @@ public class PlayerController : MonoBehaviour
         if (dir.x != 0)
         {
             float z = Mathf.Clamp(dir.x, -maxSpeed, maxSpeed);
-            rb2d.AddForce(Vector2.right * z, ForceMode2D.Force);
-
+            //rb2d.AddForce(Vector2.right * z, ForceMode2D.Force);
+            if (jump.IsGrounded())
+            {
+                rb2d.velocity = new Vector2(Vector2.right.x * z, rb2d.velocity.y);
+            }
+            else
+                rb2d.AddForce(Vector2.right * z * 3, ForceMode2D.Force);
 
             if (Mathf.Abs(rb2d.velocity.x) > maxSpeed)
             {
@@ -79,11 +93,12 @@ public class PlayerController : MonoBehaviour
                 print("sdfsdfs");
             }
         }
-        
+
+        animator.SetFloat("speed", rb2d.velocity.x);
         //// прыжок
         //if (Input.GetKeyDown(KeyCode.Space))
         //    Jump();
-        
+
     }
 
 

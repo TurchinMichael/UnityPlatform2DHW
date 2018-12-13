@@ -32,9 +32,14 @@ public class shootPlayer : MonoBehaviour {
             if (collision.gameObject.GetComponent<MyEnemy>())
                 collision.gameObject.GetComponent<MyEnemy>().Hurt(damage);
 
+            if (GetComponentInChildren<ParticleSystem>())
+                GetComponentInChildren<ParticleSystem>().gameObject.transform.parent = null;
+
             Destroy(gameObject);
         }
-        
+        if (GetComponentInChildren<ParticleSystem>())
+        GetComponentInChildren<ParticleSystem>().gameObject.transform.parent = null;
+
         Instantiate(BOOM, transform.position, transform.rotation);
         Destroy(gameObject);
     }

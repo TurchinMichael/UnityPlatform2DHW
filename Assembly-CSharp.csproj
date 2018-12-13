@@ -62,9 +62,13 @@
   <ItemGroup>
     <Compile Include="Assets\activeBridge.cs" />
     <Compile Include="Assets\boxTurrelDisable.cs" />
+    <Compile Include="Assets\createStep.cs" />
+    <Compile Include="Assets\finish.cs" />
     <Compile Include="Assets\followTarget.cs" />
+    <Compile Include="Assets\heal.cs" />
     <Compile Include="Assets\isFallen.cs" />
     <Compile Include="Assets\loadNewScene.cs" />
+    <Compile Include="Assets\myCamera.cs" />
     <Compile Include="Assets\mySpawn.cs" />
     <Compile Include="Assets\reloadScene.cs" />
     <Compile Include="Assets\Scripts\BackgroundParallax.cs" />

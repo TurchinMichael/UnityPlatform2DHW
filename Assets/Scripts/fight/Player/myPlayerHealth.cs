@@ -18,6 +18,7 @@ public class myPlayerHealth : MonoBehaviour {
         slider.interactable = false;
         slider.value = startHealth;
         text.text = slider.value.ToString();
+        //infOn();
     }
 
     public void getDamage(int damage)
@@ -37,11 +38,36 @@ public class myPlayerHealth : MonoBehaviour {
         }
     }
 
+
+    public void getHeal(int heal)
+    {
+        slider.fillRect.gameObject.SetActive(true);
+
+        currentHealth = currentHealth + heal;
+
+        if (currentHealth > startHealth)
+            slider.maxValue = currentHealth;
+        else
+            slider.maxValue = startHealth;
+
+
+        slider.value = currentHealth;
+
+        if (currentHealth > startHealth)
+        {
+            slider.maxValue = currentHealth;
+            startHealth = currentHealth;
+        }
+
+        text.text = slider.value.ToString();
+
+    }
+
     void dead()
     {
         print("health " + currentHealth);
         // .. stop the camera tracking the player
-        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().enabled = false;
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<myCamera>().enabled = false;
 
         Destroy(text);
         Destroy(slider.gameObject);

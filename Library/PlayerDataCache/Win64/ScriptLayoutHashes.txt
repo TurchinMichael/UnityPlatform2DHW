@@ -60,7 +60,7 @@ a44114bd4fa541174f78b4bb92bacb48 UnityEngine.UI.dll:UnityEngine.EventSystems.Sta
 e90403eeda069970e0b9de1533de13a6 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 2d58ca16854b99daea8c45e9c0f367b7 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 16da51d1b62ef6d4ee1849350434023b UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.Flip
+b971a106988ebd6fca12c15c3cd91059 Assembly-CSharp.dll:.Flip
 50b0b141074b216c8b53b1bd467f73c9 Unity.TextMeshPro.dll:TMPro.TMP_InputField
 53cefe5d98cadefbab750835e70b89c0 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 486cd95c82d8305219c352c06b776e1f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
@@ -94,7 +94,7 @@ a44114bd4fa541174f78b4bb92bacb48 UnityEngine.UI.dll:UnityEngine.EventSystems.Sta
 e90403eeda069970e0b9de1533de13a6 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 2d58ca16854b99daea8c45e9c0f367b7 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 16da51d1b62ef6d4ee1849350434023b UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-26bff466e71039f686a790d7f28f4d50 Assembly-CSharp.dll:.tutorial
+3d0dd873b29a2e35c6cee8f8de9e3495 Assembly-CSharp.dll:.tutorial
 815303676a896c90217cd0dd2275005c Assembly-CSharp.dll:.PickupSpawner
 486cd95c82d8305219c352c06b776e1f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 9e61f3535f3c55760a1cedfbd114f4af UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -155,6 +155,7 @@ c1e1569ccdc440f28faeca81422f5f21 Assembly-CSharp.dll:.PlayerHealth
 4ee4ce47f31c4b67b8e4cbb7b19c07fa Assembly-CSharp.dll:.BombPickup
 eaf0bcdb10d442a4029d615f41d09957 Unity.TextMeshPro.dll:TMPro.TextContainer
 ff910d1242e1efe0e585db7f9f9bf875 Assembly-CSharp.dll:.myPlayerHealth
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.heal
 201273fb4f889724fb090164b7d6c657 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 486cd95c82d8305219c352c06b776e1f UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 0f27c39183b9eb95eba0a228bea28273 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -172,6 +173,7 @@ fc061f3ae8a876c0687e86378d4a447c UnityEngine.Networking.dll:UnityEngine.Networki
 dfa21d4b6fb00cc752b472d6a2a63800 Assembly-CSharp.dll:.MyEnemy
 486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.loadNewScene
 72a8523b432c0a5317826b7a9e0a0e79 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
+db3d80f053d703b493c3885c17d0e814 Assembly-CSharp.dll:.finish
 1d329085a351bac19bcb48e98da3d0b5 Assembly-CSharp.dll:.Rocket
 e53cc67d84060d628c7f03fc725766d8 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 392c5b921098bd4c139d9146d0efa6d7 Unity.TextMeshPro.dll:TMPro.TMP_Settings
@@ -184,13 +186,14 @@ ef1631c73e265150d983aac5a92098c7 Assembly-CSharp.dll:.PlayerControl
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 4db890043e6467c85481dee08dd63590 Assembly-CSharp.dll:.trigger
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.createStep
 1a90b221dc803408fbafa883c12bcab4 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
 70f7dc248db3379548a88e8d4fa049f8 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSoundfieldExtension
 28a95668dd28649297d595834fe8417e UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioSourceExtension
 69e4c61b8b1d90f4bcecf87495366021 Assembly-CSharp.dll:.HealthPickup
 fad04644bea8cde5d4fcc9b2d0815b4c Assembly-CSharp.dll:.Spawner
-fe6e26b579b3930713b8fbcdb8c77dde Assembly-CSharp.dll:.task
+86621b94e44fa51880e09020b5a92ddb Assembly-CSharp.dll:.task
 d75dc834c5dec688db75a55a1724c90f UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 486cd95c82d8305219c352c06b776e1f UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
 e1ea12ca952c81d81a9a21fdf34446ed UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
@@ -211,3 +214,4 @@ d25077a364a89703e9ce71e7ddba390c Assembly-CSharp.dll:.Jump
 7a3e9068c3234e201603a302832b5427 Assembly-CSharp.dll:.ScoreShadow
 1e2416ba23504b0ece46b5ba779e11ef Assembly-CSharp.dll:.Bomb
 67053dd85e9c9aa7b2eac0e5b916f295 Assembly-CSharp.dll:.CameraFollow
+19f8c6cb6faf7dfac9acc154c997ad8a Assembly-CSharp.dll:.myCamera

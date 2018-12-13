@@ -25,6 +25,7 @@ public class tutorial : MonoBehaviour
     [SerializeField]
     public List<sprite_text> st;
     public Text task;
+    public Text tipHud;
 
     public PlayerController playerController;
     public Jump jump;
@@ -32,6 +33,9 @@ public class tutorial : MonoBehaviour
     public Bazooka bazooka;
     public myPlayerHealth myHealth;
     public mySpawn spawn;
+
+    public GameObject platform;
+    GameObject target;
 
 
     bool one, two, three, isPrint, final;
@@ -41,25 +45,65 @@ public class tutorial : MonoBehaviour
         hero = GameObject.FindWithTag("Player");
         myHealth.infOn();
         IsEnableAllCopoments(false);
-        StartCoroutine(TextPrint(task, "Привет, это твой герой, его только создали и вручили базуку с бомбами, он не помнит как двигаться. \nНапомни ему.", 0.04f, oneVoid/*, skipText*/));
+        StartCoroutine(TextPrint(task, "Привет, это твой герой, его только создали и вручили базуку с бомбами, он не помнит как двигаться. \nНапомни ему.", "A D клавиши передвижения, научить ходить персонажа", 0.04f, oneVoid/*, skipText*/));
     }
 
-    IEnumerator TextPrint(Text output, string input, float delay, Action action/*, ref bool skip*/)
+    void Update()
     {
-        if (isPrint) yield break;
-        isPrint = true;
+        checkHUD();
 
-        //вывод текста побуквенно
-        for (int i = 0; i <= input.Length; i++)
+        if (one)
         {
-            //if (skip) { output.text = input; yeld break; }
-            //print(input[0]);
-            output.text = input.Substring(0, i);
-            yield return new WaitForSeconds(delay);
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A))
+            {
+                isPrint = false;
+                one = false;
+                StartCoroutine(TextPrint(task, "Отлично! Теперь заставь его запрыгнуть вот на эту платформу.", "Space клавиша прыжка, запрыгнуть на платформу.",  0.04f, twoVoid/*, skipText*/));
+            }
         }
-        yield return new WaitForSeconds(1);
-        action.Invoke();
     }
+
+    public void PlatformOk(Collider2D collision)
+    {
+        if (two && collision.tag == "Player")
+        {
+            //print(collision.name);
+            isPrint = false;
+            two = false;
+            StartCoroutine(TextPrint(task, "Супер! Ты исполнительный. Пройди правее, и ты встретишь преграду. Тебе надо пройти через неё. \nВзорви её! \nАх да, бомбы взрываются только после того, как ты до них дотронешься.", "Z клавиша броска бомбы, взорвать стену", 0.04f, threeVoid/*, skipText*/));
+            square.enabled = false;
+        }
+    }
+
+    public void BoomOk(Collider2D collision)
+    {
+        if (three && collision.tag == "Player")
+        {
+            //print(collision.name);
+            isPrint = false;
+            three = false;
+            StartCoroutine(TextPrint(task, "Ну чтож, молодец. Теперь посмотрим, на что ты способен.", "Левая кнопка мыши выстрел, убить врага", 0.04f, fourVoid/*, skipText*/));
+            //spawn.enemy.AddComponent<loadNewScene>();
+            //loadNewScene z = spawn.enemy.GetComponent<loadNewScene>();
+            //Destroy(z, 0.1f);
+            //GameObject.FindWithTag("Enemy").GetComponent<loadNewScene>().GetTextField(task);
+            final = true;
+        }
+    }
+
+    public void finalOk()
+    {
+        if (final)
+        {
+            //print(collision.name);
+            isPrint = false;
+            //two = false;
+            StartCoroutine(TextPrint(task, "Отлично сработано, возможно ты мне пригодишься, посмотрим, справишься ли ты с моей задачей.", "Решить задачу", 0.04f, finalVoid/*, skipText*/));
+            //square.enabled = false;
+            //print("2");
+        }
+    }
+
 
     void oneVoid()
     {
@@ -102,66 +146,10 @@ public class tutorial : MonoBehaviour
         GameObject.FindWithTag("Enemy").AddComponent<loadNewScene>();
     }
 
-
     void finalVoid()
     {
         SceneManager.LoadScene("Level1");
         SceneManager.UnloadSceneAsync("tutorial");
-    }
-
-    public void finalOk()
-    {
-        if (final)
-        {
-            //print(collision.name);
-            isPrint = false;
-            //two = false;
-            StartCoroutine(TextPrint(task, "Отлично сработано, возможно ты мне пригодишься, посмотрим, справишься ли ты с моей задачей.", 0.04f, finalVoid/*, skipText*/));
-            //square.enabled = false;
-            //print("2");
-        }
-    }
-    void Update()
-    {
-        checkHUD();
-
-        if (one)
-        {
-            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A))
-            {
-                isPrint = false;
-                one = false;
-                StartCoroutine(TextPrint(task, "Отлично! Теперь заставь его запрыгнуть вот на эту платформу.", 0.04f, twoVoid/*, skipText*/));
-            }
-        }
-    }
-
-    public void BoomOk(Collider2D collision)
-    {
-        if (three && collision.tag == "Player")
-        {
-            //print(collision.name);
-            isPrint = false;
-            three = false;
-            StartCoroutine(TextPrint(task, "Ну чтож, молодец. Теперь посмотрим, на что ты способен.", 0.04f, fourVoid/*, skipText*/));
-            //spawn.enemy.AddComponent<loadNewScene>();
-            //loadNewScene z = spawn.enemy.GetComponent<loadNewScene>();
-            //Destroy(z, 0.1f);
-            //GameObject.FindWithTag("Enemy").GetComponent<loadNewScene>().GetTextField(task);
-            final = true;
-        }
-    }
-
-    public void PlatformOk(Collider2D collision)
-    {
-        if (two && collision.tag == "Player")
-        {
-            //print(collision.name);
-            isPrint = false;
-                two = false;
-                StartCoroutine(TextPrint(task, "Супер! Ты исполнительный. Пройди правее, и ты встретишь преграду. Тебе надо пройти через неё. \nВзорви её!", 0.04f, threeVoid/*, skipText*/));
-            square.enabled = false;
-        }
     }
 
     void TutorialHudElementsShowHide(int[] indexes, bool showHide)
@@ -200,9 +188,6 @@ public class tutorial : MonoBehaviour
         }
     }
 
-    public GameObject  platform;
-    GameObject target;
-
     void SquareFollow()
     {
         if (target)
@@ -228,5 +213,23 @@ public class tutorial : MonoBehaviour
                     obj.HUD_Image.sprite = obj.spriteOriginal;
             }
         }
+    }
+
+    IEnumerator TextPrint(Text output, string input, string tip, float delay, Action action/*, ref bool skip*/)
+    {
+        if (isPrint) yield break;
+        isPrint = true;
+
+        //вывод текста побуквенно
+        for (int i = 0; i <= input.Length; i++)
+        {
+            //if (skip) { output.text = input; yeld break; }
+            //print(input[0]);
+            output.text = input.Substring(0, i);
+            yield return new WaitForSeconds(delay);
+        }
+        yield return new WaitForSeconds(1);
+        action.Invoke();
+        tipHud.text = tip;
     }
 }

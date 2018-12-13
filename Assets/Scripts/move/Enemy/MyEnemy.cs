@@ -8,10 +8,12 @@ public class MyEnemy : MonoBehaviour
     private int heath = 2;
     public int damage = 1;
     Transform target;
-
+    Rigidbody2D rb2d;
     public float moveSpeed = 2f;
     public float maxSpeed = 100f;
     Vision vision;
+    Animator animator;
+    Flip flip;
     //public GameObject hitSprite;
     //public Transform startForHit;
 
@@ -42,7 +44,12 @@ public class MyEnemy : MonoBehaviour
         startPosition = transform.position;
         target = GameObject.FindWithTag("Player").transform;
         vision = GetComponent<Vision>();
-
+        if (GetComponent<Animator>())
+            animator = GetComponent<Animator>();
+        if (GetComponent<Rigidbody2D>())
+            rb2d = GetComponent<Rigidbody2D>();
+        //if (GetComponent<Flip>())
+        //    flip = GetComponent<Flip>();
     }
 
     public float aggroDistance;
@@ -55,15 +62,22 @@ public class MyEnemy : MonoBehaviour
         {
             hit = Physics2D.Raycast(transform.position, target.position - transform.position, aggroDistance, LayerMask.GetMask(layers));
 
+            Debug.DrawRay(transform.position, (target.position.normalized - transform.position.normalized) * 5);
+
             if (vision.isSee())
             {
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Clamp((target.position.x - transform.position.x) * moveSpeed * Time.deltaTime, -maxSpeed, maxSpeed), GetComponent<Rigidbody2D>().velocity.y));
+                rb2d.AddForce(new Vector2(Mathf.Clamp((target.position.x - transform.position.x) * moveSpeed /** Time.deltaTime*/, -maxSpeed, maxSpeed), GetComponent<Rigidbody2D>().velocity.y));
+                //rb2d.velocity = new Vector2((target.position.x - transform.position.x) * moveSpeed, rb2d.velocity.y);
             }
             else
             {
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(Mathf.Clamp((startPosition.x - transform.position.x) * moveSpeed * Time.deltaTime, -maxSpeed, maxSpeed), GetComponent<Rigidbody2D>().velocity.y));
+                rb2d.AddForce(new Vector2(Mathf.Clamp((startPosition.x - transform.position.x) * moveSpeed /** Time.deltaTime*/, -maxSpeed, maxSpeed), GetComponent<Rigidbody2D>().velocity.y));
+                //rb2d.velocity = new Vector2((startPosition.x - transform.position.x) * moveSpeed, rb2d.velocity.y);
             }
         }
+
+        if (rb2d && animator)
+            animator.SetFloat("speed", rb2d.velocity.x);
 
         if (heath <= 0 && !dead)
             Death();
@@ -95,11 +109,11 @@ public class MyEnemy : MonoBehaviour
         scorePos.y += 1.5f;
     }
 
-    public void Flip()
-    {
-        Vector3 enemyScale = transform.localScale;
-        enemyScale.x *= -1;
-        transform.localScale = enemyScale;
-    }
-    
+    //public void Flip()
+    //{
+    //    Vector3 enemyScale = transform.localScale;
+    //    enemyScale.x *= -1;
+    //    transform.localScale = enemyScale;
+    //}
+
 }
