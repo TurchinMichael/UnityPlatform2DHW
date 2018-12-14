@@ -63,6 +63,12 @@
     <Compile Include="Assets\activeBridge.cs" />
     <Compile Include="Assets\boxTurrelDisable.cs" />
     <Compile Include="Assets\createStep.cs" />
+    <Compile Include="Assets\Fantasy Wooden GUI  Free\dontBeDestroy.cs" />
+    <Compile Include="Assets\Fantasy Wooden GUI  Free\dontBeDestroyHUD.cs" />
+    <Compile Include="Assets\Fantasy Wooden GUI  Free\dontBeDestroyPlayer.cs" />
+    <Compile Include="Assets\Fantasy Wooden GUI  Free\normal_ui_set A\Scripts\mainmenu.cs" />
+    <Compile Include="Assets\Fantasy Wooden GUI  Free\normal_ui_set A\Scripts\settings.cs" />
+    <Compile Include="Assets\Fantasy Wooden GUI  Free\Singleton.cs" />
     <Compile Include="Assets\finish.cs" />
     <Compile Include="Assets\followTarget.cs" />
     <Compile Include="Assets\heal.cs" />
@@ -108,6 +114,7 @@
     <Compile Include="Assets\Scripts\SetParticleSortingLayer.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
     <Compile Include="Assets\selfDestroy.cs" />
+    <Compile Include="Assets\settingsShow.cs" />
     <Compile Include="Assets\shoot.cs" />
     <Compile Include="Assets\task.cs" />
     <Compile Include="Assets\trigger.cs" />

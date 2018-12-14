@@ -13,16 +13,20 @@ public class Remover : MonoBehaviour
 		if(col.gameObject.tag == "Player")
 		{
 			// .. stop the camera tracking the player
-			GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().enabled = false;
+            if (GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>())
+			    GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraFollow>().enabled = false;
 
-			// .. stop the Health Bar following the player
-			//if(GameObject.FindGameObjectWithTag("HealthBar").activeSelf)
-			//{
-			//	GameObject.FindGameObjectWithTag("HealthBar").SetActive(false);
-			//}
+            if (GameObject.FindGameObjectWithTag("MainCamera").GetComponent<myCamera>())
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<myCamera>().enabled = false;
 
-			// ... instantiate the splash where the player falls in.
-			Instantiate(splash, col.transform.position, transform.rotation);
+            // .. stop the Health Bar following the player
+            //if(GameObject.FindGameObjectWithTag("HealthBar").activeSelf)
+            //{
+            //	GameObject.FindGameObjectWithTag("HealthBar").SetActive(false);
+            //}
+
+            // ... instantiate the splash where the player falls in.
+            Instantiate(splash, col.transform.position, transform.rotation);
 			// ... destroy the player.
 			Destroy (col.gameObject);
 			// ... reload the level.

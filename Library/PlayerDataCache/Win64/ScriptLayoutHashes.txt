@@ -2,6 +2,7 @@ WindowsStandalone
 PlayerPath?
 D:/Git/UnityPlatform2DHW/Build/tutorial platf.exe
 SceneListBegin?
+Assets/Scenes/startUI.unity
 Assets/Scenes/tutorial.unity
 Assets/Scenes/Level1.unity
 SceneListEnd?
@@ -206,6 +207,7 @@ eccdc7aa570da4689670a3a6c9e796cc Assembly-CSharp.dll:.Bazooka
 5a52c8d94348ff1459180e964711d888 Assembly-CSharp.dll:.SetParticleSortingLayer
 e04611b8715e6833d2bd7010fc6be10b Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 998af175203c054848f2510b973f4d17 Assembly-CSharp.dll:.PlayerController
+19f8c6cb6faf7dfac9acc154c997ad8a Assembly-CSharp.dll:.myCamera
 ab142f39edeb7c5abd2380e96642103d Assembly-CSharp.dll:.attackController
 2f9af06a78208a67db480e9bfed4a076 Unity.TextMeshPro.dll:TMPro.TextMeshPro
 9318334b30e9f195f573b2ce00154b95 Unity.TextMeshPro.dll:TMPro.TMP_ColorGradient
@@ -214,4 +216,9 @@ d25077a364a89703e9ce71e7ddba390c Assembly-CSharp.dll:.Jump
 7a3e9068c3234e201603a302832b5427 Assembly-CSharp.dll:.ScoreShadow
 1e2416ba23504b0ece46b5ba779e11ef Assembly-CSharp.dll:.Bomb
 67053dd85e9c9aa7b2eac0e5b916f295 Assembly-CSharp.dll:.CameraFollow
-19f8c6cb6faf7dfac9acc154c997ad8a Assembly-CSharp.dll:.myCamera
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.mainmenu
+504b22c4d6f339369464fc10a7854dec Assembly-CSharp.dll:.settings
+f4ea185de3facedded536a784348bad2 Assembly-CSharp.dll:.settingsShow
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.dontBeDestroy
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.dontBeDestroyHUD
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.dontBeDestroyPlayer

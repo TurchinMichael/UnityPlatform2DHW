@@ -66,7 +66,7 @@ public class task : MonoBehaviour {
                 if (i == h)
                 {
                     _myCamera.target = k;
-                    print(k);
+                    //print(k);
                     h = h + input.Length / _myCamera.targetsCount;
                     k++;
                 }
@@ -76,7 +76,7 @@ public class task : MonoBehaviour {
         }
 
         yield return new WaitForSeconds(1.5f);
-        _myCamera.target = 0;
+        //_myCamera.target = 0;
 
         if (howWrite == 1)
         {
