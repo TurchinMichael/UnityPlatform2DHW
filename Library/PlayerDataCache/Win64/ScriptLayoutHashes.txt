@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-D:/Git/UnityPlatform2DHW/Build/tutorial platf.exe
+C:/Users/Михаил/Documents/Desktop/build/tutorial platf.exe
 SceneListBegin?
 Assets/Scenes/startUI.unity
 Assets/Scenes/tutorial.unity
@@ -147,6 +147,7 @@ f16835701e71dd5d6fb1fed4b7aff1d8 Unity.TextMeshPro.dll:TMPro.TMP_Asset
 31717f34c342344467e86e83d478d8d9 Assembly-CSharp.dll:.BackgroundPropSpawner
 e233d1c5f4779b563724f49ce957b012 Assembly-CSharp.dll:.followTarget
 1d685699094ddb988363102cb479c571 Assembly-CSharp.dll:.FollowPlayer
+486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.safeItems
 17155a8cf2062e4e003424c543035890 Assembly-CSharp.dll:.selfDestroy
 c1e1569ccdc440f28faeca81422f5f21 Assembly-CSharp.dll:.PlayerHealth
 89587aa43d942c48886586409c160b56 Assembly-CSharp.dll:.Enemy
@@ -222,4 +223,5 @@ d25077a364a89703e9ce71e7ddba390c Assembly-CSharp.dll:.Jump
 7a3e9068c3234e201603a302832b5427 Assembly-CSharp.dll:.ScoreShadow
 1e2416ba23504b0ece46b5ba779e11ef Assembly-CSharp.dll:.Bomb
 67053dd85e9c9aa7b2eac0e5b916f295 Assembly-CSharp.dll:.CameraFollow
-486cd95c82d8305219c352c06b776e1f Assembly-CSharp.dll:.safeItems
+ddcae71b3f91386237efd012a9eef2be UnityEngine.TestRunner.dll:UnityEngine.TestTools.EnumerableSetUpTearDownCommandState
+486cd95c82d8305219c352c06b776e1f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.TestResultRendererCallback
