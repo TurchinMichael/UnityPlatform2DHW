@@ -9,14 +9,35 @@ public class boom : MonoBehaviour {
     public int damage = 1;
     public float timeBeforeTheExplosion = 5;
     Collider2D[] colliders;
-    
+    ParticleSystem[] particles;
+    AudioSource audioSource;
+
+    private void Awake()
+    {
+        if (GetComponentInChildren<ParticleSystem>())
+            particles = GetComponentsInChildren<ParticleSystem>();
+
+        if (particles.Length > 0)
+            foreach (ParticleSystem obj in particles)
+            {
+                var mn = obj.main;
+                mn.playOnAwake = false;
+                obj.transform.localScale = new Vector3(1, 1, 1);
+                var sh = obj.shape;
+                sh.radius = explosionRadius;
+                obj.Stop();
+            }
+
+        if (GetComponentInChildren<AudioSource>())
+        {
+            audioSource = GetComponentInChildren<AudioSource>();
+            audioSource.Stop();
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D other)
     {
-      //  print(other.gameObject.tag);
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Enemy")
-        {
-            StartCoroutine("Boom");
-        }
+        StartCoroutine("Boom");
     }
 
     IEnumerator Boom()
@@ -24,6 +45,18 @@ public class boom : MonoBehaviour {
         yield return new WaitForSeconds(timeBeforeTheExplosion);
         
         colliders = Physics2D.OverlapCircleAll(transform.position, explosionRadius);
+
+        if (particles.Length > 0)
+            foreach (ParticleSystem obj in particles)
+            {
+                print(obj.name);
+                obj.Play();
+            }
+        audioSource.transform.parent = null;
+        audioSource.gameObject.AddComponent<selfDestroy>().timeDestroy = 2f;
+        audioSource.Play();
+
+        yield return new WaitForSeconds(particles[0].duration);
 
         foreach (Collider2D hit in colliders)
         {
@@ -36,8 +69,7 @@ public class boom : MonoBehaviour {
 
                 if (hit.tag == "Wall")
                     hit.attachedRigidbody.AddForce(direction.normalized * power*10);
-
-
+                
                 if (hit.GetComponent<MyEnemy>())
                     hit.GetComponent<MyEnemy>().Hurt(damage);
 

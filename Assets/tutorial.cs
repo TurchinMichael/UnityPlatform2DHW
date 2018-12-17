@@ -69,7 +69,7 @@ public class tutorial : MonoBehaviour
             //print(collision.name);
             isPrint = false;
             two = false;
-            StartCoroutine(TextPrint(task, "Супер! Ты исполнительный. Пройди правее, и ты встретишь преграду. Тебе надо пройти через неё. \nВзорви её! \nАх да, бомбы взрываются только после того, как ты до них дотронешься.", "Z клавиша броска бомбы, взорвать стену", 0.04f, threeVoid/*, skipText*/));
+            StartCoroutine(TextPrint(task, "Супер! Ты исполнительный. Пройди правее, и ты встретишь преграду. Тебе надо пройти через неё. \nВзорви её! \nБомбы взрываются через некоторое время.", "Z клавиша броска бомбы, взорвать стену", 0.04f, threeVoid/*, skipText*/));
             square.enabled = false;
         }
     }

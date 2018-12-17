@@ -7,22 +7,34 @@ public class settings : MonoBehaviour {
 
     public Slider volume, musicVolume;
     public AudioSource music;
+    safeItems safe;
 
     // Use this for initialization
-    void Start ()
+    void Awake ()
     {
         volume.maxValue = 1;// mainListener.vol
         volume.minValue = 0;
         musicVolume.maxValue = 1;
         musicVolume.minValue = 0;
-        volume.value = AudioListener.volume;
-        musicVolume.value = music.volume;
+        //volume.value = AudioListener.volume;
+        //musicVolume.value = music.volume;
+
+        safe = FindObjectOfType<safeItems>();
+
+        musicVolume.value = safe.MusicValue;
+        volume.value = safe.VolumeValue;
+
+        AudioListener.volume = volume.value;
+        music.volume = musicVolume.value;
     }
 
     // Update is called once per frame
     void Update ()
     {
-        AudioListener.volume = volume.value;
-        music.volume = musicVolume.value;
+        safe.VolumeValue = volume.value;
+        AudioListener.volume = safe.VolumeValue;
+
+        safe.MusicValue = musicVolume.value;
+        music.volume = safe.MusicValue;
     }
 }

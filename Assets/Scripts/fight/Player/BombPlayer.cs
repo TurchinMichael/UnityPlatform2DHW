@@ -35,10 +35,8 @@ public class BombPlayer : MonoBehaviour {
     /// <param name = "startForPacket" > позиция создания снаряда</param>
     void fire(GameObject packet, Vector3 startForPacket)
     {
-        //print("no");
         if (canShoot)
         {
-          //  print("yes");
             Instantiate(packet, startForPacket, transform.rotation);
             tempTimer = shootTimer;
             canShoot = false;
