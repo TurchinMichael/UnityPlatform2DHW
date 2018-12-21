@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Jump : MonoBehaviour {
 
@@ -21,8 +22,8 @@ public class Jump : MonoBehaviour {
 	void Update() {
 
         // прыжок
-        if (Input.GetKeyDown(KeyCode.Space))
-            jump();
+        if (CrossPlatformInputManager.GetAxis("Vertical") > 0)//Input.GetKeyDown(KeyCode.Space))
+        jump();
     }
 
     /// <summary>

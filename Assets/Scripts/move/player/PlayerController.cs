@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class PlayerController : MonoBehaviour
 {
@@ -46,9 +47,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
         // изменяем направление движения для персонажа с помощью клавиатуры
-        dir.x = Input.GetAxis("Horizontal") * acceleration;
+        //dir.x = Input.GetAxis("Horizontal") * acceleration;
+
+        dir.x = CrossPlatformInputManager.GetAxis("Horizontal") * acceleration;
+        print(CrossPlatformInputManager.GetAxis("Horizontal"));
+
 
         mousePos = Input.mousePosition;
         myPos = Camera.main.WorldToScreenPoint(transform.position);
