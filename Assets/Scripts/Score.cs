@@ -20,11 +20,11 @@ public class Score : MonoBehaviour
 
 	void Update ()
 	{
-		// Set the score text.
-		GetComponent<GUIText>().text = $"{originString}:  {score}";
+        // Set the score text.
+        GetComponent<GUIText>().text = (originString + ":  " + score);//$"{originString}:  {score}";
 
-		// If the score has changed...
-		if(previousScore != score)
+        // If the score has changed...
+        if (previousScore != score)
 			// ... play a taunt.
 			playerControl.StartCoroutine(playerControl.Taunt());
 

@@ -1,4 +1,0 @@
-#Fri Dec 21 16:56:21 MSK 2018
-base.0=D\:\\Git\\UnityPlatform2DHW\\Temp\\gradleOut\\build\\intermediates\\transforms\\dexMerger\\release\\0
-path.0=classes.dex
-renamed.0=classes.dex

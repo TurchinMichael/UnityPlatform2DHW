@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-D:/Git/UnityPlatform2DHW/Build/android/test2.apk
+D:/Git/UnityPlatform2DHW/Build/android/test3.apk
 SceneListBegin?
 Assets/Scenes/startUI.unity
 Assets/Scenes/tutorial.unity
@@ -28,6 +28,7 @@ e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventH
 5ae870c7c10650d1c829995e694f6c53 Assembly-CSharp.dll:.Vision
 284de57e05fdff18f9ecfad93789a617 Assembly-CSharp.dll:.shoot
 11d31dbb97b9596cd6937c03e03ec486 Assembly-CSharp.dll:.boom
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.Editor.dll:UnityEngine.Advertisements.Editor.Placeholder
 cf9f5cf2c3145a37ac07f00e50e460f9 UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 5fc094978ce3e3591a7500ed380d854a UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -150,6 +151,7 @@ a064ddaf8f981efc803a1fc5f62ef4f0 Assembly-CSharp.dll:.FollowPlayer
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.safeItems
 0ad226195c714e99cf4ccce11fcba978 Assembly-CSharp.dll:.selfDestroy
 7ec6d7c3835291239aba5439b74fbae7 Assembly-CSharp.dll:.PlayerHealth
+71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
 8ec6b93723278e93abe761ca5f370b34 Assembly-CSharp.dll:.Enemy
 aba7519e64fac6bcb6989d3ac24ad4da Assembly-CSharp.dll:.shootPlayer
 27f0825407ea5640029d5ce5db6a9117 Assembly-CSharp.dll:.turret
@@ -183,9 +185,12 @@ ad9173d3a69d99153f38ed4b62226129 UnityEngine.Networking.dll:UnityEngine.Networki
 d8f4bf2bc1a75f1882afcbbe788b3e30 Assembly-CSharp.dll:.Rocket
 aa82b3ce4c0c9b227036c0337315c5d3 Unity.TextMeshPro.dll:TMPro.TMP_FontAsset
 e51c09a4cc447f11db225afcd8e3e490 Unity.TextMeshPro.dll:TMPro.TMP_Settings
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
+cf96e5f7b3d069bab453925bd41be04e UnityEngine.TestRunner.dll:UnityEngine.TestTools.EnumerableSetUpTearDownCommandState
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 259d013faac28e8ba0aa2a7542273735 UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
+71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.TestResultRendererCallback
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.mainmenu
 dfd2f15540d166a3ae01f9b01309be95 Assembly-CSharp.dll:.PlayerControl
 931f489e44eadf809e9310429c99dde5 UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioListenerExtension
@@ -203,6 +208,7 @@ fb6a1ea36b4f6ef5948d283d93760765 UnityEngine.GoogleAudioSpatializer.dll:UnityEng
 2ecd14a559379ff1aa56b21a75a8848e Assembly-CSharp.dll:.task
 a4f0a4f62100f1a4fb5cbe0e00dde83f Unity.TextMeshPro.dll:TMPro.TextMeshProUGUI
 a872e4bb1052faec3da5ab35c3dc0af4 Assembly-CSharp.dll:.activeBridge
+5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton
 d251bf88db6c95a6b1aa0b69298da9ef UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.dontBeDestroyPlayer
 0d69084ff2a7f4e8a3867ddb9246f0d1 Assembly-CSharp.dll:.Bazooka
@@ -220,9 +226,3 @@ b77e8d22497915128b04a738d8311f70 Assembly-CSharp.dll:.Jump
 c66a43a296f63c1d13e1315fc4c5573b Assembly-CSharp.dll:.ScoreShadow
 14bd76c8ff89cf24db09039ee1c5a919 Assembly-CSharp.dll:.Bomb
 dc0c855440d59a516315a62ef55d7fd8 Assembly-CSharp.dll:.CameraFollow
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.Editor.dll:UnityEngine.Advertisements.Editor.Placeholder
-71bb6a6b6c8f052f948db64c7dd3ca4f Unity.Analytics.Editor.dll:UnityEditor.Analytics.AnalyticsEventTrackerEditor
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
-cf96e5f7b3d069bab453925bd41be04e UnityEngine.TestRunner.dll:UnityEngine.TestTools.EnumerableSetUpTearDownCommandState
-71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.TestResultRendererCallback
-5fc094978ce3e3591a7500ed380d854a Unity.Analytics.DataPrivacy.dll:UnityEngine.Analytics.DataPrivacyButton

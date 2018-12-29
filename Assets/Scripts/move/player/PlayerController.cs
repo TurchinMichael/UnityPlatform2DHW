@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
         //dir.x = Input.GetAxis("Horizontal") * acceleration;
 
         dir.x = CrossPlatformInputManager.GetAxis("Horizontal") * acceleration;
-        print(CrossPlatformInputManager.GetAxis("Horizontal"));
+        //print(CrossPlatformInputManager.GetAxis("Horizontal"));
 
 
         mousePos = Input.mousePosition;
